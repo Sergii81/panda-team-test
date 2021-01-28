@@ -63,7 +63,7 @@ class TaskController extends Controller
     {
         $task = Task::where('id', $request->id)->first();
         $task->text = $request->text;
-        $task->status = $request->status ? $request->status : 0;
+        $task->status = $request->status ? 1 : 0;
         $task->save();
 
         return redirect()->route('index');
